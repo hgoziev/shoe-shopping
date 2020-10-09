@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "589305182799",
+    "firebase_url": "https://shoofy-9f344.firebaseio.com",
+    "project_id": "shoofy-9f344",
+    "storage_bucket": "shoofy-9f344.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:589305182799:android:909bb876349476559ec83a",
+        "android_client_info": {
+          "package_name": "com.shoofy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "589305182799-ofh3mvql81cq9f6nt5vb3ektgdmn0sdn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPhNRx_j6SdHBq3qyGZOvcK4GvA4lgKds"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "589305182799-ofh3mvql81cq9f6nt5vb3ektgdmn0sdn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
