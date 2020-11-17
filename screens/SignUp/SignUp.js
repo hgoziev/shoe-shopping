@@ -46,14 +46,7 @@ export default class SignUp extends Component {
             <Text style={{color: 'red'}}>{this.state.errorMessage}</Text>
           )}
 
-          {/* <TextInput
-            style={[styles.input, styles.inputPas]}
-            placeholder="Full Name"
-            underlineColorAndroid="rgb(246, 247, 250)"
-            placeholderTextColor="rgb(115, 115, 115)"
-            onChangeText={(name) => this.setState({name})}
-            value={this.state.name}
-          /> */}
+
           <TextInput
             style={styles.input}
             placeholder="Email or Phone Number"
