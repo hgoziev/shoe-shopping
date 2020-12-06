@@ -1,38 +1,21 @@
-import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Image,
-  ScrollView,
-  StyleSheet,
-} from 'react-native';
+import React from 'react';
+import {View, Text, TouchableOpacity, Image, ScrollView} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import styles from './styles';
 
 export default function Saved({navigation}) {
   return (
     <View style={styles.container}>
       <View style={styles.title}>
         <TouchableOpacity onPress={() => navigation.navigate('Review')}>
-          <Icon
-            name="chevron-circle-left"
-            size={36}
-            style={{
-              marginRight: wp('23%'),
-              marginLeft: wp('8%'),
-              color: 'rgb(0, 219, 228)',
-            }}
-          />
+          <Icon name="chevron-circle-left" size={36} style={styles.icon} />
         </TouchableOpacity>
 
-        <Text
-          style={{color: 'rgb(38, 38, 38)', fontSize: 26, fontWeight: '700'}}>
-          My Cart
-        </Text>
+        <Text style={styles.mycart}>My Cart</Text>
       </View>
 
       <ScrollView
@@ -43,42 +26,16 @@ export default function Saved({navigation}) {
           <View style={styles.image}>
             <Image
               source={require('../../assets/images/transparent/air1.png')}
-              style={{
-                width: wp('35%'),
-                height: hp('19%'),
-                marginHorizontal: wp('4%'),
-                marginVertical: hp('1%'),
-              }}
+              style={styles.img}
             />
           </View>
 
           <View
             style={{marginHorizontal: wp('3.5%'), marginVertical: hp('2%')}}>
-            <Text
-              style={{
-                fontWeight: '700',
-                fontSize: 20,
-                color: 'rgb(90, 90, 90)',
-              }}>
-              Nike Joy Ride
-            </Text>
+            <Text style={styles.productTitle}>Nike Joy Ride</Text>
             <View style={{flexDirection: 'row', marginTop: hp('2%')}}>
-              <Text
-                style={{
-                  color: 'rgb(44, 44, 44)',
-                  fontSize: 18,
-                  fontWeight: '700',
-                }}>
-                $
-              </Text>
-              <Text
-                style={{
-                  fontSize: 18,
-                  fontWeight: 'bold',
-                  color: 'rgb(44, 44, 44)',
-                }}>
-                190
-              </Text>
+              <Text style={styles.dollar}>$</Text>
+              <Text style={styles.price}>190</Text>
             </View>
 
             <View
@@ -86,34 +43,15 @@ export default function Saved({navigation}) {
                 flexDirection: 'row',
                 paddingTop: hp('5%'),
               }}>
-              <TouchableOpacity
-                style={{
-                  backgroundColor: 'rgb(234, 234, 235)',
-                  paddingHorizontal: wp('2%'),
-                  paddingBottom: hp('0.5%'),
-                  borderRadius: 7,
-                }}>
+              <TouchableOpacity style={styles.minusContainer}>
                 <Icon
                   name="minus"
                   size={16}
                   style={{paddingTop: hp('1%'), color: 'rgb(86, 86, 86)'}}
                 />
               </TouchableOpacity>
-              <Text
-                style={{
-                  marginHorizontal: wp('4%'),
-                  fontSize: 20,
-                  fontWeight: '700',
-                }}>
-                1
-              </Text>
-              <TouchableOpacity
-                style={{
-                  backgroundColor: 'rgb(234, 234, 235)',
-                  paddingHorizontal: wp('2%'),
-                  paddingBottom: hp('0.5%'),
-                  borderRadius: 7,
-                }}>
+              <Text style={styles.qty}>1</Text>
+              <TouchableOpacity style={styles.plusContainer}>
                 <Icon
                   name="plus"
                   size={16}
@@ -123,28 +61,10 @@ export default function Saved({navigation}) {
             </View>
           </View>
         </View>
-        <View
-          style={{
-            borderWidth: 1,
-            borderColor: 'rgb(243, 243, 244)',
-            marginTop: hp('3%'),
-          }}
-        />
+        <View style={styles.linebreak} />
         <View style={styles.bottom}>
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              marginRight: wp('30%'),
-            }}>
-            <Text
-              style={{
-                color: 'rgb(10, 10, 10)',
-                fontSize: 16,
-                fontWeight: '500',
-              }}>
-              Total
-            </Text>
+          <View style={styles.totalContainer}>
+            <Text style={styles.total}>Total</Text>
             <Text
               style={{
                 color: 'rgb(10, 10, 10)',
@@ -155,61 +75,14 @@ export default function Saved({navigation}) {
             </Text>
           </View>
 
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              marginRight: wp('30%'),
-              paddingTop: hp('1.5%'),
-            }}>
-            <Text
-              style={{
-                color: 'rgb(10, 10, 10)',
-                fontSize: 16,
-                fontWeight: '500',
-              }}>
-              Delivery
-            </Text>
-            <Text
-              style={{
-                color: 'rgb(10, 10, 10)',
-                fontSize: 16,
-                fontWeight: '500',
-              }}>
-              Free
-            </Text>
+          <View style={styles.deliveryContainer}>
+            <Text style={styles.delivery}>Delivery</Text>
+            <Text style={styles.free}>Free</Text>
           </View>
-          <View
-            style={{
-              borderColor: 'rgb(90, 90, 90)',
-              borderWidth: 0.6,
-              marginRight: wp('20%'),
-              marginTop: hp('2%'),
-            }}
-          />
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              marginRight: wp('30%'),
-              marginTop: hp('2.5%'),
-            }}>
-            <Text
-              style={{
-                color: 'rgb(10, 10, 10)',
-                fontSize: 18,
-                fontWeight: '700',
-              }}>
-              Subtotal
-            </Text>
-            <Text
-              style={{
-                color: 'rgb(10, 10, 10)',
-                fontSize: 18,
-                fontWeight: '700',
-              }}>
-              $190
-            </Text>
+          <View style={styles.linebreak} />
+          <View style={styles.sub}>
+            <Text style={styles.subText}>Subtotal</Text>
+            <Text style={styles.price}>$190</Text>
           </View>
 
           <View style={styles.payment}>
@@ -290,49 +163,3 @@ export default function Saved({navigation}) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white',
-  },
-  title: {
-    flex: 0.2,
-    backgroundColor: 'rgb(221, 221, 221)',
-    alignItems: 'center',
-    //     justifyContent: 'center',
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,
-    elevation: 1,
-    flexDirection: 'row',
-  },
-  scroll: {
-    flex: 4,
-  },
-  top: {
-    flex: 2,
-    flexDirection: 'row',
-    backgroundColor: 'white',
-  },
-  bottom: {
-    flex: 2,
-    marginHorizontal: wp('5%'),
-    marginVertical: hp('5%'),
-  },
-  button: {
-    flex: 0.17,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingBottom: hp('1%'),
-  },
-  image: {
-    backgroundColor: 'rgb(234, 234, 235)',
-    borderRadius: 20,
-    marginHorizontal: wp('3.5%'),
-    marginVertical: hp('2%'),
-    elevation: 3,
-  },
-  payment: {
-    paddingTop: hp('5%'),
-  },
-});
